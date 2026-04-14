@@ -1,4 +1,5 @@
-⚙️ VOLUMEN 1: Caracterización de Motores GM37 y Encoders Magnéticos
+## ⚙️ VOLUMEN 1: Caracterización de Motores GM37 y Encoders Magnéticos
+
 Este documento detalla el análisis físico, la corrección de especificaciones de fábrica y la formulación matemática de los actuadores principales utilizados en el chasis omnidireccional del Proyecto Semillero . Comprender la verdadera naturaleza de estos motores fue el primer paso crítico para diseñar el sistema de control PID del que se hablará en otro apartado.
 
 1. El Conflicto de la Etiqueta: Especificaciones y como venian en realidad
@@ -196,6 +197,7 @@ Para ahorrarle trabajo al microcontrolador, resolvemos las constantes estáticas
 La Ecuación Final del Sistema:
 
 C
+
 int rpm_actual = (int)(delta * 1.11);
 
 Resumen: Esta única  línea de código en C es el corazón sensorial del chasis. Multiplicando los pulsos leídos por 1.11, el PIC deduce instantáneamente a qué velocidad en RPM va el carro cada 50 milisegundos, permitiendo que el PID reaccione casi en tiempo real a la fricción o cambios en el terreno.
