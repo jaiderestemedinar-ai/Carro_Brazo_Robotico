@@ -27,6 +27,7 @@ Conclusión : Los motores fueron ensamblados o etiquetados incorrectamente en f�
 
 Aquí tambien queda en evidencia el codigo empleado para saber los RPM por individual de cada motor:
 
+```c
 /*
  * =======================================================================
  * PRUEBA EMPÍRICA: CARACTERIZACIÓN DE VELOCIDAD TERMINAL (LAZO ABIERTO)
