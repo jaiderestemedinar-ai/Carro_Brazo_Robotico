@@ -44,9 +44,7 @@ long posicion_anterior = 0;
 volatile float rpm_actual = 0.0;
 volatile char flag_muestreo = 0;
 volatile char ultimo_estado_A = 0;
-// ==========================================
-// CONFIGURACIÓN DE PERIFÉRICOS
-// ==========================================
+
 void UART1_Init(void) {
     SPBRG1 = 25; TRISCbits.TRISC6 = 0; TRISCbits.TRISC7 = 1; 
     TXSTA1bits.SYNC = 0; TXSTA1bits.BRGH = 0; RCSTA1bits.SPEN = 1; TXSTA1bits.TXEN = 1; RCSTA1bits.CREN = 1; 
@@ -69,10 +67,7 @@ void PWM_Init(void) {
     T2CON = 0x05;           
     CCPR1L = 0;             
 }
-
-// ==========================================
 // INTERRUPCIONES
-// ==========================================
 void __interrupt() ISR(void) {
     
     // 1. LECTURA DEL ENCODER
@@ -109,10 +104,6 @@ void __interrupt() ISR(void) {
         PIR1bits.TMR1IF = 0; 
     }
 }
-
-// ==========================================
-// PROGRAMA PRINCIPAL
-// ==========================================
 void main(void) {
     OSCCON = 0x72; 
     ANSELB = 0; TRISBbits.TRISB0 = 0; TRISBbits.TRISB1 = 0; 
