@@ -1,6 +1,8 @@
 ## 🌐 VOLUMEN 5: Gemelo Digital, Interfaz Web y Servidor ESP8266
 Este documento describe la arquitectura de software de alto nivel del Proyecto Semillero. Detalla cómo se diseñó una interfaz gráfica HMI (Human-Machine Interface) capaz de renderizar modelos 3D y enviar comandos en tiempo real, utilizando un módulo ESP8266 como servidor local.
 
+![interfaz web](imagen_interfaz.png)
+
 ## 1. Arquitectura de Red (El Servidor ESP8266)
 Para que el proyecto fuera 100% autónomo y no dependiera de redes de internet externas, el microcontrolador ESP8266 NodeMCU fue configurado como un Access Point (Punto de Acceso SoftAP).
 
