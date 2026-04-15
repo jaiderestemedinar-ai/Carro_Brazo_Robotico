@@ -37,12 +37,15 @@ Los módulos XBee operan estrictamente a 3.3V, mientras que el microcontrolador 
 
 Para solucionar este conflicto de hardware, se implementó el siguiente acondicionamiento:
 
-Se utilizaron Módulos Adaptadores / Shields para XBee que incorporan reguladores de tensión (LDO a 3.3V) integrados.
+Se utilizaron Módulos Adaptadores / Shields para XBee que incorporan reguladores de tensión (LDO a 3.3V) integrados(WS-11293).
+
+![adaptador-xbee](Adaptador_Xbee.png)
+
 
 Los adaptadores incluyen Level Shifters (conversores de nivel lógico) en las líneas TX y RX, permitiendo que la señal de 3.3V del XBee sea leída correctamente por el PIC, y que el pulso de 5V del PIC se reduzca de forma segura a 3.3V antes de entrar al radio.
 
 ## 3.1. Cableado: El Descubrimiento de la Etiqueta Invertida
-La regla fundamental de la comunicación serial dicta que la conexión debe ser cruzada (el transmisor de un lado va al receptor del otro). Sin embargo, durante la integración física se descubrió una particularidad crítica en el hardware utilizado: los pines de la placa adaptadora (Shield) del XBee están mal etiquetados de fábrica.
+La regla fundamental de la comunicación serial dicta que la conexión debe ser cruzada (el transmisor de un lado va al receptor del otro). Sin embargo, durante la integración física descubrí una particularidad crítica en el hardware utilizado: los pines de la placa adaptadora (WS-11293) del XBee están mal etiquetados de fábrica.
 
 El pin marcado como "TX" en la serigrafía del adaptador es internamente el RX, y el marcado como "RX" es internamente el TX. Para compensar este error de manufactura, la conexión física real entre la placa adaptadora y el microcontrolador debe hacerse de manera visualmente "recta" para lograr el cruce lógico correcto en su interior:
 
